@@ -52,3 +52,9 @@
   font-size: 12px;
   cursor: pointer;
 }
+
+.checkout__page--total {
+  text-align: right;
+  /* border-top: 1px solid #333333; */
+  padding-top: 8px;
+}

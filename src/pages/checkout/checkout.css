@@ -1,0 +1,26 @@
+body {
+  background-color: #f1f1f1;
+}
+
+.checkout__page {
+  width: 100%;
+  max-width: 720px;
+  background-color: #ffffff;
+  margin: auto;
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.checkout__page--title {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 8px;
+}
+
+.checkout__page--content {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+}
