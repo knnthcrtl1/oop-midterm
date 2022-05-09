@@ -1,4 +1,4 @@
-import { teaSizes } from "./list";
+// import { teaSizes } from "./list";
 import "./milktea.css";
 
 type TeaProp = {
@@ -10,10 +10,7 @@ const MilkTeaItem = ({ item, handleOrderItem }: TeaProp) => {
   return (
     <div>
       <div className="tea__item">
-        <div
-          className="tea__item--row"
-          onClick={() => handleOrderItem(item)}
-        >
+        <div className="tea__item--row" onClick={() => handleOrderItem(item)}>
           {/* <div
             className="team__item--checkbox"
             style={{ background: item?.isOrdered && "black" }}

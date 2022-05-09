@@ -1,4 +1,4 @@
-import { useReducer, createContext } from "react";
+import { useReducer, createContext, useCallback } from "react";
 
 type InitProp = {
   data: any;
@@ -13,7 +13,7 @@ const reducer = (state: any, action: any) => {
     case "SET_DATA":
       return {
         ...state,
-        data: "",
+        data: action.data,
       };
     default: {
       return state;
@@ -24,8 +24,16 @@ const reducer = (state: any, action: any) => {
 export const useAppReducer = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const setData = useCallback(
+    (data: any) => {
+      dispatch({ type: "SET_DATA", data });
+    },
+    [dispatch]
+  );
+
   return {
     ...initialState,
+    setData
   };
 };
 

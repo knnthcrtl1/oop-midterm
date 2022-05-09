@@ -1,4 +1,4 @@
-import { teaSizes } from "./list";
+// import { teaSizes } from "./list";
 import "./milktea.css";
 
 type TeaProp = {

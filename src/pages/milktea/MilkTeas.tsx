@@ -70,7 +70,7 @@ function MilkTeas() {
   };
 
   const handleCheckOut = () => {
-    navigate("/receipt");
+    navigate("/checkout");
   };
 
   return (
@@ -103,7 +103,7 @@ function MilkTeas() {
             </div>
             <div className="tea__sizes">
               Sizes:{" "}
-              {addOns.map((add) => (
+              {addOns.map((add: any) => (
                 <p
                   style={{
                     backgroundColor: add?.id === addOn ? "red" : "transparent",
@@ -123,7 +123,7 @@ function MilkTeas() {
       <div>
         <div>ORDERS:</div>
         <div>
-          {orderList.map((item) => (
+          {orderList.map((item: any) => (
             <OrderItem
               key={item?.id}
               item={item}

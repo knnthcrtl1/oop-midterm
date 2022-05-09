@@ -1,13 +1,10 @@
-import { useState } from "react";
 import { addOns, teaList, teaSizes } from "./list";
 import "./milktea.css";
 
 const OrderItem = ({ item, handleRemoveItem }: any) => {
-  //   const [teaName, setTeaName] = useState<any>("");
-
   const getItemName = (): any => {
     let name = "";
-    teaList.filter((val) => {
+    teaList.filter((val: any) => {
       if (val.id === item?.tea) {
         name = val.name;
       }
@@ -17,7 +14,7 @@ const OrderItem = ({ item, handleRemoveItem }: any) => {
 
   const getSizeName = () => {
     let name = "";
-    teaSizes.filter((val) => {
+    teaSizes.filter((val: any) => {
       if (val.id === item?.size) {
         name = val.name;
       }
@@ -27,7 +24,7 @@ const OrderItem = ({ item, handleRemoveItem }: any) => {
 
   const getAddOn = () => {
     let name = "";
-    addOns.filter((val) => {
+    addOns.filter((val: any) => {
       if (val.id === item?.addOn) {
         name = val.name;
       }
