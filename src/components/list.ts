@@ -30,14 +30,17 @@ export const teaSizes = [
   {
     id: "0",
     name: "small",
+    price: 59,
   },
   {
     id: "1",
     name: "medium",
+    price: 69,
   },
   {
     id: "2",
     name: "large",
+    price: 79,
   },
 ];
 

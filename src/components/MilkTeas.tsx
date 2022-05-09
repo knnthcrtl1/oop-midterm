@@ -1,6 +1,7 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { addOns, teaList, teaSizes } from "./list";
 import "./milktea.css";
+import OrderItem from "./OrderItem";
 // import MilkTeaItem from "./MilkTeaItem";
 
 function MilkTeas() {
@@ -33,7 +34,12 @@ function MilkTeas() {
     setAddOns(id);
   };
 
-  const testList = () => {
+  const handleAddToCart = () => {
+    if (!selectedSize) {
+      alert("please select tea size");
+      return false;
+    }
+
     let orderObj = {
       id: Date.now(),
       tea: selectedTea,
@@ -53,6 +59,12 @@ function MilkTeas() {
     setSelectedTea("");
     setSize("");
     setAddOns("");
+  };
+
+  const handleRemoveItem = (id: string) => {
+    let orders = orderList.filter((item) => item.id !== id);
+
+    setOrderList(orders);
   };
 
   return (
@@ -97,7 +109,7 @@ function MilkTeas() {
                 </p>
               ))}
             </div>
-            <button onClick={testList}>Add to cart</button>
+            <button onClick={handleAddToCart}>Add to cart</button>
           </>
         )}
       </div>
@@ -105,7 +117,11 @@ function MilkTeas() {
         <div>ORDERS:</div>
         <div>
           {orderList.map((item) => (
-            <p key={item?.id}>{item?.tea}</p>
+            <OrderItem
+              key={item?.id}
+              item={item}
+              handleRemoveItem={handleRemoveItem}
+            />
           ))}
         </div>
       </div>

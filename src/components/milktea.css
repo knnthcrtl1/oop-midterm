@@ -40,3 +40,15 @@
 .list__item > div {
   flex: 4;
 }
+
+.order__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order__item--remove {
+  color: red;
+  font-size: 12px;
+  cursor: pointer;
+}
