@@ -32,14 +32,14 @@ export const useAppReducer = () => {
   );
 
   return {
-    ...initialState,
-    setData
+    ...state,
+    setData,
   };
 };
 
 export const AppContext = createContext({
   ...initialState,
-  data: (test: any) => {},
+  setData: (test: any) => {},
 });
 
 export const AppProvider = AppContext.Provider;

@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { addOns, teaList, teaSizes } from "./list";
 import "./milktea.css";
 import OrderItem from "./OrderItem";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../engine/global/reducer";
 
 function MilkTeas() {
   let navigate = useNavigate();
+
+  const { setData, data } = useContext(AppContext);
 
   const [selectedTea, setSelectedTea] = useState<any>();
   const [selectedSize, setSize] = useState<any>();
@@ -70,7 +73,11 @@ function MilkTeas() {
   };
 
   const handleCheckOut = () => {
+    setData(orderList);
+
+    console.log("data =>", data);
     navigate("/checkout");
+    
   };
 
   return (
