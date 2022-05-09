@@ -2,9 +2,11 @@ import { useState } from "react";
 import { addOns, teaList, teaSizes } from "./list";
 import "./milktea.css";
 import OrderItem from "./OrderItem";
-// import MilkTeaItem from "./MilkTeaItem";
+import { useNavigate } from "react-router-dom";
 
 function MilkTeas() {
+  let navigate = useNavigate();
+
   const [selectedTea, setSelectedTea] = useState<any>();
   const [selectedSize, setSize] = useState<any>();
   const [addOn, setAddOns] = useState<any>();
@@ -67,6 +69,10 @@ function MilkTeas() {
     setOrderList(orders);
   };
 
+  const handleCheckOut = () => {
+    navigate("/receipt");
+  };
+
   return (
     <div className="list__item">
       <div>
@@ -109,6 +115,7 @@ function MilkTeas() {
                 </p>
               ))}
             </div>
+
             <button onClick={handleAddToCart}>Add to cart</button>
           </>
         )}
@@ -123,9 +130,11 @@ function MilkTeas() {
               handleRemoveItem={handleRemoveItem}
             />
           ))}
+          {orderList.length !== 0 && (
+            <button onClick={handleCheckOut}>Checkout</button>
+          )}
         </div>
       </div>
-      <div>test</div>
     </div>
   );
 }
