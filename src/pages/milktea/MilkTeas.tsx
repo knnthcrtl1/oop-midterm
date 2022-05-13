@@ -77,12 +77,12 @@ function MilkTeas() {
 
     console.log("data =>", data);
     navigate("/checkout");
-    
   };
 
   return (
     <div className="list__item">
       <div>
+        <p>Menus</p>
         <select onChange={handleOrderItem}>
           <option></option>
           {list.map((item) => (
@@ -128,7 +128,7 @@ function MilkTeas() {
         )}
       </div>
       <div>
-        <div>ORDERS:</div>
+        <div>ORDERS: {orderList?.length}</div>
         <div>
           {orderList.map((item: any) => (
             <OrderItem
