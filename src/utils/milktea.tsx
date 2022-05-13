@@ -1,6 +1,6 @@
 import { addOns, teaList, teaSizes } from "../pages/milktea/list";
 
-const getItemName = (item: any): any => {
+const getItemName = (item: any) => {
   let name = "";
   teaList.filter((val: any) => {
     if (val.id === item?.tea) {

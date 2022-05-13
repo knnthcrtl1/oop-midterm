@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import React, { useContext, useRef } from "react";
 import { AppContext } from "../../engine/global/reducer";
 import {
   formatPrice,
@@ -7,12 +7,14 @@ import {
   formatTotalPrice,
 } from "../../utils/milktea";
 import "./checkout.css";
+import { useReactToPrint } from "react-to-print";
 
-const Checkout = () => {
+const ComponentToPrint = React.forwardRef((props, ref: any) => {
+  console.log(props, ref);
   const { data } = useContext(AppContext);
 
   return (
-    <div className="checkout__page">
+    <div className="checkout__page" ref={ref}>
       <div className="checkout__page--title">
         <div style={{ flex: 7, textAlign: "left" }}>Orders</div>
         <div style={{ flex: 1, textAlign: "right" }}>Quantity</div>
@@ -33,6 +35,20 @@ const Checkout = () => {
       <div className="checkout__page--total">
         TOTAL: {formatTotalPrice(data && data)}
       </div>
+    </div>
+  );
+});
+
+const Checkout = () => {
+  const componentRef = useRef(null);
+  const handlePrint = useReactToPrint({
+    content: () => componentRef?.current,
+  });
+
+  return (
+    <div>
+      <ComponentToPrint ref={componentRef} />
+      <button onClick={handlePrint}>Print this out!</button>
     </div>
   );
 };
