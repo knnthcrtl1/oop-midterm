@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/oop-midterm/static/css/main.4f75cb5b.css",
+    "main.js": "/oop-midterm/static/js/main.6cddca91.js",
+    "static/js/787.28cb0dcd.chunk.js": "/oop-midterm/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/oop-midterm/index.html",
+    "main.4f75cb5b.css.map": "/oop-midterm/static/css/main.4f75cb5b.css.map",
+    "main.6cddca91.js.map": "/oop-midterm/static/js/main.6cddca91.js.map",
+    "787.28cb0dcd.chunk.js.map": "/oop-midterm/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4f75cb5b.css",
+    "static/js/main.6cddca91.js"
+  ]
+}
