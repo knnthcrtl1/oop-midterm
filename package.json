@@ -1,8 +1,8 @@
 {
   "name": "my-app",
+  "homepage": "https://knnthcrtl1.github.io/oop-midterm/",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://knnthcrtl1.github.io/oop-midterm",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
